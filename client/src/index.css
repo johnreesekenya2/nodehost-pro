@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 4%);
+  --foreground: hsl(0 0% 95%);
+  --card: hsl(0 0% 7%);
+  --card-foreground: hsl(0 0% 90%);
+  --popover: hsl(0 0% 7%);
+  --popover-foreground: hsl(0 0% 95%);
+  --primary: hsl(195 100% 50%);
+  --primary-foreground: hsl(0 0% 5%);
+  --secondary: hsl(262 52% 62%);
+  --secondary-foreground: hsl(0 0% 95%);
+  --muted: hsl(0 0% 15%);
+  --muted-foreground: hsl(0 0% 60%);
+  --accent: hsl(195 100% 50%);
+  --accent-foreground: hsl(0 0% 5%);
+  --destructive: hsl(0 85% 60%);
+  --destructive-foreground: hsl(0 0% 95%);
+  --success: hsl(142 76% 56%);
+  --success-foreground: hsl(0 0% 5%);
+  --warning: hsl(33 100% 52%);
+  --warning-foreground: hsl(0 0% 5%);
+  --border: hsl(0 0% 20%);
+  --input: hsl(0 0% 15%);
+  --ring: hsl(195 100% 50%);
+  --chart-1: hsl(195 100% 50%);
+  --chart-2: hsl(142 76% 56%);
+  --chart-3: hsl(33 100% 52%);
+  --chart-4: hsl(262 52% 62%);
+  --chart-5: hsl(0 85% 60%);
+  --sidebar: hsl(0 0% 7%);
+  --sidebar-foreground: hsl(0 0% 90%);
+  --sidebar-primary: hsl(195 100% 50%);
+  --sidebar-primary-foreground: hsl(0 0% 5%);
+  --sidebar-accent: hsl(0 0% 15%);
+  --sidebar-accent-foreground: hsl(0 0% 60%);
+  --sidebar-border: hsl(0 0% 20%);
+  --sidebar-ring: hsl(195 100% 50%);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --radius: 8px;
+  --shadow-2xs: 0px 2px 0px 0px hsl(195 100% 50% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(195 100% 50% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(195 100% 50% / 0.00), 0px 1px 2px -1px hsl(195 100% 50% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(195 100% 50% / 0.00), 0px 1px 2px -1px hsl(195 100% 50% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(195 100% 50% / 0.00), 0px 2px 4px -1px hsl(195 100% 50% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(195 100% 50% / 0.00), 0px 4px 6px -1px hsl(195 100% 50% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(195 100% 50% / 0.00), 0px 8px 10px -1px hsl(195 100% 50% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(195 100% 50% / 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glow-effect:hover {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .terminal-bg {
+    background: linear-gradient(135deg, hsl(0 0% 5%) 0%, hsl(0 0% 8%) 100%);
+  }
+
+  .terminal-cursor::after {
+    content: '_';
+    animation: terminal-cursor 1s infinite;
+    color: var(--primary);
+  }
+
+  @keyframes terminal-cursor {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  @keyframes pulse-glow {
+    0% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+    100% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.6); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+}
